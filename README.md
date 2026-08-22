@@ -55,6 +55,8 @@ Then use it:
 
 **Always on, no invocation** — append the core rules to `~/.claude/CLAUDE.md`. See [docs/ALWAYS-ON.md](docs/ALWAYS-ON.md) for the compact version and its tradeoff.
 
+**Web chat, desktop app, and cloud sessions** — those never read local files. Paste [docs/account-preferences.md](docs/account-preferences.md) into your claude.ai account preferences to cover them.
+
 ---
 
 ## What it actually does
