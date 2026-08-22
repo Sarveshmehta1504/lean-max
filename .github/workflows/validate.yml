@@ -1,0 +1,46 @@
+name: validate
+
+on: [push, pull_request]
+
+jobs:
+  skill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: SKILL.md frontmatter is valid
+        run: |
+          python3 - <<'PY'
+          import re, sys
+          s = open("SKILL.md").read()
+          m = re.match(r"^---\n(.*?)\n---\n", s, re.S)
+          assert m, "frontmatter delimiters missing"
+          fm = m.group(1)
+          assert "name:" in fm and "description:" in fm, "name/description required"
+          assert re.search(r"^name: lean-max$", fm, re.M), "name must be lean-max"
+          print("frontmatter OK")
+          PY
+
+      - name: every referenced file exists
+        run: |
+          missing=0
+          for f in $(grep -o 'references/[a-z]*\.md' SKILL.md | sort -u); do
+            [ -f "$f" ] || { echo "MISSING $f"; missing=1; }
+          done
+          exit $missing
+
+      - name: SKILL.md stays lean (resident cost guard)
+        run: |
+          lines=$(wc -l < SKILL.md)
+          echo "SKILL.md is $lines lines"
+          [ "$lines" -le 130 ] || { echo "SKILL.md over budget — put detail in references/"; exit 1; }
+
+      - name: installer syntax
+        run: bash -n install.sh
+
+      - name: benchmark reproduces the planted bug
+        run: |
+          cd examples/benchmark
+          out=$(python3 run_tests.py || true)
+          echo "$out"
+          echo "$out" | grep -q "6 passed, 1 failed" || { echo "benchmark not in expected red state"; exit 1; }
