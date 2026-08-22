@@ -4,9 +4,14 @@
 
 Most token waste in AI coding isn't the thinking. It's reading a 967-line file to change 3 lines, pasting code back into chat that's already on disk, and narrating what you just did. lean-max removes that, and spends the savings where it actually matters: **verifying the change actually works.**
 
-[![Skill](https://img.shields.io/badge/Claude%20Code-Skill-D97757)](https://docs.claude.com/en/docs/claude-code/skills)
+[![validate](https://github.com/Sarveshmehta1504/lean-max/actions/workflows/validate.yml/badge.svg)](https://github.com/Sarveshmehta1504/lean-max/actions/workflows/validate.yml)
+[![token reduction](https://img.shields.io/badge/tokens-94%25%20reduction-brightgreen)](docs/BENCHMARK.md)
+[![benchmark](https://img.shields.io/badge/benchmark-reproducible-success)](examples/benchmark)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-D97757)](https://docs.claude.com/en/docs/claude-code/skills)
+[![resident cost](https://img.shields.io/badge/resident%20cost-~1.8k%20tokens-informational)](#structure)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Benchmark](https://img.shields.io/badge/benchmark-94%25%20reduction-brightgreen)](docs/BENCHMARK.md)
+[![stars](https://img.shields.io/github/stars/Sarveshmehta1504/lean-max?style=flat&color=yellow)](https://github.com/Sarveshmehta1504/lean-max/stargazers)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](docs/CONTRIBUTING.md)
 
 ---
 
