@@ -69,6 +69,8 @@ Then use it:
 
 **Kills output waste.** No recaps, no "I've successfully…", no restating your request, no pasting back code that's already on disk. Citations are `path:line`.
 
+**Resumes and checkpoints automatically.** Step 0 of the loop reads `STATE.md` if the project has one; step 8 rewrites it when a task finishes — unprompted, as part of finishing rather than a command you have to remember. Invoke the skill and the whole cycle runs itself: resume → work → checkpoint → clear.
+
 **Persists context instead of hoarding it.** The biggest cost in long-running work isn't file reads — it's the conversation being re-read every turn. A 224 MB session measured in testing had auto-compacted 204 times: already losing detail, still paying full price. lean-max writes what matters to a `STATE.md` and clears, which is both cheaper and *more* faithful than a session that summarizes itself behind your back.
 
 **Treats installed skills as a per-request tax.** Every skill's name and description rides in the system prompt whether you use it or not. On one real setup, 1,990 installed skills cost ~103,000 tokens on *every request* — more than every file read combined. Install what you use.

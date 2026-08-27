@@ -23,6 +23,7 @@ Never run a heavier mode than the task earns. Never run a lighter one to save to
 
 ## 1. The loop
 
+0. **Resume** — if `STATE.md` exists for this project, read it first and say in one line what you're picking up. That file *is* your context; don't re-derive it from the codebase. See `references/context.md`.
 1. **Scope** — restate nothing. Name the exact files/symbols in play. If ambiguity would change the work, ask *one* question; otherwise assume, proceed, and note the assumption in one line at the end.
 2. **Locate** — grep/glob to the relevant region **and, in the same search, list every dependent** (callers, importers, subclasses, tests, config keys) *before* you edit. Never open a large file to find one function.
 3. **Read** — read every file you will edit, fully, plus the contracts it depends on (types, interfaces, the functions it calls). No editing from inference.
@@ -30,6 +31,7 @@ Never run a heavier mode than the task earns. Never run a lighter one to save to
 5. **Edit** — smallest correct diff. Match surrounding style, naming, error handling, comment density. Leave the file in the idiom you found it.
 6. **Verify** — execute it. Tiers and per-stack commands in `references/verification.md`. "Looks right" is not verified.
 7. **Report** — result, then risks. Nothing else.
+8. **Checkpoint** — at the end of each discrete task, rewrite `STATE.md`: decisions and *why*, current task and next step, gotchas, open questions. Then the session can be cleared without losing anything. Do this unprompted — it is part of finishing, not a separate request.
 
 Task types other than bug-fix (feature, refactor, review, investigation, migration) reshape steps 3–6 — see `references/playbooks.md`.
 
@@ -74,7 +76,7 @@ Task types other than bug-fix (feature, refactor, review, investigation, migrati
 
 Compact after each discrete task. Clear when switching project or feature. Connect only the MCP servers this session needs; don't toggle mid-session.
 
-**Long sessions are not free context.** Past the context window they auto-compact and silently lose detail while still re-reading everything they hold, every turn. Persist what matters to a `STATE.md` and clear — see `references/context.md`. Same information, a fraction of the tokens, and lossless.
+**The rhythm: work → checkpoint `STATE.md` → clear → resume.** Long sessions are not free context — past the window they auto-compact and silently lose detail while still re-reading everything they hold, every turn. A measured case: a 224 MB session had auto-compacted 19 times, already discarding detail at maximum price. `STATE.md` is lossless, inspectable, and ~600 tokens against ~63M. Detail in `references/context.md`.
 
 **Installed skills are a per-request tax.** Every skill's name and description sits in the system prompt whether used or not; hundreds of speculative installs can cost more than all file reads combined. Keep only what you use.
 
