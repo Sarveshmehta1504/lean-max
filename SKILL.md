@@ -74,6 +74,10 @@ Task types other than bug-fix (feature, refactor, review, investigation, migrati
 
 Compact after each discrete task. Clear when switching project or feature. Connect only the MCP servers this session needs; don't toggle mid-session.
 
+**Long sessions are not free context.** Past the context window they auto-compact and silently lose detail while still re-reading everything they hold, every turn. Persist what matters to a `STATE.md` and clear — see `references/context.md`. Same information, a fraction of the tokens, and lossless.
+
+**Installed skills are a per-request tax.** Every skill's name and description sits in the system prompt whether used or not; hundreds of speculative installs can cost more than all file reads combined. Keep only what you use.
+
 ## 6. Anti-patterns
 
 | Don't | Do |
@@ -97,3 +101,4 @@ Compact after each discrete task. Clear when switching project or feature. Conne
 | `references/stacks.md` | Need the locate + verify commands for a specific language/stack |
 | `references/budget.md` | Long context, deciding what to read/drop/delegate |
 | `references/enforcement.md` | Making these rules mechanical via hooks/settings instead of advisory |
+| `references/context.md` | Long-running project — persisting context to STATE.md instead of a growing session |
