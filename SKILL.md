@@ -102,3 +102,4 @@ Compact after each discrete task. Clear when switching project or feature. Conne
 | `references/budget.md` | Long context, deciding what to read/drop/delegate |
 | `references/enforcement.md` | Making these rules mechanical via hooks/settings instead of advisory |
 | `references/context.md` | Long-running project — persisting context to STATE.md instead of a growing session |
+| `references/setup-audit.md` | Token cost is high and the cause isn't obvious — audit the setup before the workflow |

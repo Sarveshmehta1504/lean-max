@@ -77,6 +77,21 @@ Then use it:
 
 ---
 
+## Check your setup first
+
+Before optimizing how you work, check what every request pays before it starts:
+
+```bash
+./audit.sh
+```
+
+It flags the drains that have nothing to do with coding style — a bloated skill index
+(measured at ~103,000 tokens *per request* on one real setup), a 1M context window
+multiplying cache reads, oversized sessions that auto-compact and lose detail anyway,
+plus third-party API routing and plaintext credentials. Read-only; it changes nothing.
+
+Full detail: [references/setup-audit.md](references/setup-audit.md).
+
 ## Structure
 
 Progressive disclosure — **66% of the skill never enters context unless the task needs it.**
