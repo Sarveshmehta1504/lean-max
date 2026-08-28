@@ -41,6 +41,11 @@ git clone https://github.com/Sarveshmehta1504/lean-max.git
 cd lean-max && ./install.sh /path/to/your/repo
 ```
 
+**Windows** — see [docs/WINDOWS.md](docs/WINDOWS.md) for the full ordered setup, with
+PowerShell versions of the audit and the skill-pruning tool. Note that the skill is only
+2 of the 5 token levers; three are machine configuration that cloning this repo does not
+apply.
+
 **Everywhere on your machine** (available in every project):
 ```bash
 git clone https://github.com/Sarveshmehta1504/lean-max.git
