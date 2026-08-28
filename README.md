@@ -161,6 +161,11 @@ Re-run the audit. All config checks should read OK.
 
 Full Windows walkthrough: **[docs/WINDOWS.md](docs/WINDOWS.md)**.
 
+**Or have Claude do it for you** — paste the prompt in
+[docs/SETUP-PROMPT.md](docs/SETUP-PROMPT.md) into Claude Code on the new machine. It
+audits first, reports what is actually costing tokens there, and only changes anything
+after you approve.
+
 ---
 
 ## What it actually does
