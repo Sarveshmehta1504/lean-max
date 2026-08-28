@@ -206,7 +206,7 @@ references/
 ├── context.md         89 lines  \
 ├── playbooks.md       73 lines   |
 ├── budget.md          52 lines   |  ~4,500 tok — on demand only
-├── setup-audit.md     48 lines   |
+├── setup-audit.md     55 lines   |
 ├── enforcement.md     48 lines   |
 ├── stacks.md          34 lines   |
 └── verification.md    30 lines  /
